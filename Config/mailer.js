@@ -35,17 +35,17 @@ const transporter = nodemailer.createTransport({
     },
   });
 
-  transporter.verify(function (error, success) {
-    if (error) {
-      console.error("Transporter verification failed:", error);
-    } else {
-      console.log("Transporter is ready to send messages");
-    }
-  });
+  // transporter.verify(function (error, success) {
+  //   if (error) {
+  //     console.error("Transporter verification failed:", error);
+  //   } else {
+  //     console.log("Transporter is ready to send messages");
+  //   }
+  // });
 
 
   const mailOptions = {
-    from: process.env.GOOGLE_EMAIL,
+    from: "salaamolayinka007@gmail.com",
     to: Email,
     subject: "Welcome to Hello World Community",
     html: contactTemplate,
@@ -93,8 +93,8 @@ const SendOtp = async (Otp, FullName, Email) => {
   const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GOOGLE_EMAIL,
-        pass: process.env.GOOGLE_PASSWORD, 
+        user: "salaamolayinka007@gmail.com",
+        pass: "upgw rkys stms yito", 
       },
     });
 

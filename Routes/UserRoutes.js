@@ -2,8 +2,10 @@ const express = require("express")
 const router = express.Router()
 const {SignUp, Login, EditAcc, getCurrentUser} = require("../Controllers/UserController")
 const VerifyToken = require("../Middlewares/VerifyToken")
+const {validateMiddleware } = require("../Middlewares/Validator")
+const { validateUserSignUp } = require("../Middlewares/UserValidator")
 
-router.post("/sign-up", SignUp)
+router.post("/sign-up", validateMiddleware(validateUserSignUp), SignUp)
 router.post("/login", Login)
 // Private Route
 // router.post("/editAcc", verifyToken, editacc)
